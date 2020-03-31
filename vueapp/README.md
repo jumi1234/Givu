@@ -22,3 +22,5 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### You can see Main Page of GIV-U -> ./src/views/Vue_Web_Kimjumi(Main)
