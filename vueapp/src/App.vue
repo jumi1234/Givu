@@ -49,11 +49,11 @@
         <!-- drawer -->
         <!-- <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon> -->
         <div>
-          <v-toolbar-content>기부하기</v-toolbar-content>
-          <v-toolbar-content style="padding-left:15px">프로젝트 올리기</v-toolbar-content>
+          <v-toolbar-items>기부하기</v-toolbar-items>
+          <v-toolbar-items style="padding-left:15px"><router-link :to="{name: 'apply'}">프로젝트 올리기</router-link></v-toolbar-items>
         </div>
 
-        <v-toolbar-title class="givu" style="padding-right:55px"><router-link :to="{ name: 'home'}">GIV-U</router-link></v-toolbar-title>
+        <v-toolbar-title class="givu" style="padding-right:55px"><router-link :to="{name: 'home'}">GIV-U</router-link></v-toolbar-title>
         <!-- <v-toolbar-content @click="!$store.state.user ? signinWithGoogle() : signOut()">{{ $store.state.user ? $store.state.user.displayName + '님' : '로그인' }}</v-toolbar-content> -->
         <div v-if="!$store.state.user">
           <v-toolbar-content @click="signinWithGoogle()">로그인</v-toolbar-content>
@@ -142,9 +142,6 @@ export default {
     },
     signOut () {
       this.$firebase.auth().signOut()
-    },
-    tt () {
-      console.log('엥')
     }
   }
 }
@@ -152,7 +149,7 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Marvel&display=swap');
-  v-toolbar-content {
+  v-toolbar-items {
     font-family: 'Nanum Gothic' !important;
     cursor: pointer;
   }
@@ -166,11 +163,14 @@ export default {
   }
 
   a {
-    text-decoration: none;
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  .givu a {
     font-family: 'Marvel';
     font-weight: 300;
     font-size: x-large;
-    color: black !important;
   }
   v-toolbar-content a {
     font-size: small;
